@@ -1,9 +1,17 @@
 import React from 'react'
 import { useState } from 'react';
+import { CiMenuBurger } from "react-icons/ci";
+import { CiMenuKebab } from "react-icons/ci";
 
 const Navbar = () => {
     const [menu, openMenu] = useState(false);
-    const [sowMenu,setShowMenue] = useState(true);
+    const [showMenu,setShowMenue] = useState(true);
+
+
+    const handleshowMenuClick = ()=> {
+        openMenu(!menu);
+        setShowMenue(!showMenu);
+    }
 
 
   return (
@@ -22,7 +30,8 @@ const Navbar = () => {
             <a href='#Contact'>
                 <li className='text-md transition-all duration-300 p-1 md:p-0'>Contact</li>
             </a>
-        </ul>
+        </ul> 
+        {showMenu ? <CiMenuBurger size={20} className="md:hidden absolute right-10 top-6 transition-all duration-300" onClick={handleshowMenuClick}/>:<CiMenuKebab onClick={handleshowMenuClick} className="md:hidden absolute right-10 top-6 transition-all duration-600" />}      
     </nav>
     
 
