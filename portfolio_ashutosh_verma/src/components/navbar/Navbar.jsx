@@ -2,11 +2,15 @@ import React from 'react'
 import { useState } from 'react';
 import { CiMenuBurger } from "react-icons/ci";
 import { CiMenuKebab } from "react-icons/ci";
+import { MdModeNight,MdOutlineModeNight } from "react-icons/md";
 
 
-const Navbar = () => {
+
+
+const Navbar = ({onClick,day}) => {
     const [menu, openMenu] = useState(false);
     const [showMenu,setShowMenue] = useState(true);
+    
 
 
     const handleshowMenuClick = ()=> {
@@ -31,6 +35,7 @@ const Navbar = () => {
             <a href='#Contact'>
                 <li className='text-md transition-all duration-300 p-1 md:p-0 hover:scale-125'>Contact</li>
             </a>
+            <li className='transition-all duration-300 p-1 md:p-0 hover:scale-125'>{day?<MdModeNight onClick={onClick} size={22}/>: <MdOutlineModeNight onClick={onClick} size={22}/>}</li>
         </ul> 
         {showMenu ? <CiMenuBurger size={20} className="md:hidden absolute right-10 top-6 transition-all duration-300" onClick={handleshowMenuClick}/>:<CiMenuKebab onClick={handleshowMenuClick} className="md:hidden absolute right-10 top-6 transition-all duration-600" />}      
     </nav>

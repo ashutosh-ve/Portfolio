@@ -9,10 +9,11 @@ const About = () => {
         <div>
             <h2 className='text-2xl md:text-4xl font-bold items-center'>About</h2>
             <div className='md:flex flex-wrap flex-col md:flex-row items-center'>
-                <img className='md:h-80' src={AboutImg} alt="" />
-                {<HiArrowNarrowRight className='text-3xl' />}
-                <h2>firsr</h2>
-
+                <img className='md:h-80' src={AboutImg} alt="About" />
+                <ul>
+                    <div className='flex gap-3 py-4'></div>
+                    <HiArrowNarrowRight size={50} className='mt-1'/>
+                </ul>
             </div>
         </div>
 
